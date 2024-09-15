@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="src/assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="/style/index.css">
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="weather">
+      <input type="text" class="city"/>
+      <p class="temperature"></p>
+      <p class="weather-description"></p>
+    </div>
+  </header>
+  <main class="main">
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="add-todo"></div>
+      <label for="todo" class="add-todo__label">Add Task</label>
+      <input id="todo" type="text" class="add-todo__input">
+      <span id="todo-error"></span>
+      <ul class="todo-list"></ul>
+    </div>
+    <button id="btn-delete" class="btn-delete">delete completed task</button>
+  </main>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
