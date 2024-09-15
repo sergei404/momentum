@@ -26,17 +26,18 @@ export function getWeather() {
 
 document.addEventListener('DOMContentLoaded', () =>{
   getWeather()
+  console.log(localStorage.getItem('city'));
+  
 });
 
 
 const getCityName = async (lat, lon) => {
   try {
-      const res = await fetch(`http://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address?token=8d0083cde9612ebbea568e3dc471c717dedba88e&lat=${lat}&lon=${lon}`);
-
-      const data = await res.json();
-      input.value = data.
-      suggestions[0].data.city_with_type.slice(2)
-      localStorage.setItem('city', data.suggestions[0].data.city_with_type.slice(2));
+      const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}`);
+      const { city } = await res.json();
+      
+      input.value = city
+      localStorage.setItem('city', city);
   } catch (error) {
       console.log(error);
   }
